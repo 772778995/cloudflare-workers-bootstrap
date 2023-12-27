@@ -3,14 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "start": "wrangler dev"
+    "serve": "wrangler deploy",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",
-    "itty-router": "^3.0.12",
+    "@types/lodash": "^4.14.202",
+    "itty-router": "^4.0.25",
+    "prettier": "^3.1.1",
     "typescript": "^5.0.4",
     "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.0.47",
+    "@cloudflare/itty-router-openapi": "^1.0.6",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "lodash": "^4.17.21",
+    "ts-mixer": "^6.0.3"
   }
 }

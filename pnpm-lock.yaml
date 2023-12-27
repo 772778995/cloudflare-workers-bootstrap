@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@cloudflare/ai':
+    specifier: ^1.0.47
+    version: 1.0.47
   '@cloudflare/itty-router-openapi':
     specifier: ^1.0.6
     version: 1.0.6
@@ -14,6 +17,9 @@ dependencies:
   class-validator:
     specifier: ^0.14.0
     version: 0.14.0
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   ts-mixer:
     specifier: ^6.0.3
     version: 6.0.3
@@ -22,6 +28,9 @@ devDependencies:
   '@cloudflare/workers-types':
     specifier: ^4.20231218.0
     version: 4.20231218.0
+  '@types/lodash':
+    specifier: ^4.14.202
+    version: 4.14.202
   itty-router:
     specifier: ^4.0.25
     version: 4.0.25
@@ -44,6 +53,10 @@ packages:
     dependencies:
       openapi3-ts: 4.2.1
       zod: 3.22.4
+    dev: false
+
+  /@cloudflare/ai@1.0.47:
+    resolution: {integrity: sha512-HRCIrSPrC3mXtIhbWQsSZAQxKHeiQxsjLPy0LHPrkZMzIFevJREINSNEhEccU/kDREkyPlzU5vV4++Yldbqqsg==}
     dev: false
 
   /@cloudflare/itty-router-openapi@1.0.6:
@@ -354,6 +367,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: true
+
   /@types/node-forge@1.3.10:
     resolution: {integrity: sha512-y6PJDYN4xYBxwd22l+OVH35N+1fCYWiuC3aiP2SlXVE6Lo7SS+rSx9r89hLxrP4pn6n1lBGhHJ12pj3F3Mpttw==}
     dependencies:
@@ -578,6 +595,10 @@ packages:
 
   /libphonenumber-js@1.10.52:
     resolution: {integrity: sha512-6vCuCHgem+OW1/VCAKgkasfegItCea8zIT7s9/CG/QxdCMIM7GfzbEBG5d7lGO3rzipjt5woOQL3DiHa8Fy78Q==}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /magic-string@0.25.9:

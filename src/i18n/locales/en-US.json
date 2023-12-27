@@ -1,0 +1,7 @@
+{
+  "请输入6-32位字符的密码": "Please enter a password of 6-32 characters",
+  "请输入6位数字的验证码": "Please enter the 6-digit verification code",
+  "请输入包含数字、大小写字母的密码": "Please enter a password containing numbers, uppercase and lowercase letters",
+  "请输入有效的手机号码": "Please enter a valid phone number",
+  "请输入有效的验证码": "Please enter a valid verification code"
+}
