@@ -1,5 +1,5 @@
 import { Mixin, decorate } from 'ts-mixer'
-import { IsMobilePhone, IsNumberString, IsStrongPassword, Length } from 'class-validator'
+import { IsMobilePhone, IsNumberString, Length } from 'class-validator'
 
 export class UserPhoneDto {
   /** 手机号码 */
@@ -10,7 +10,6 @@ export class UserPhoneDto {
 export class UserPsdDto {
   /** 密码 */
   @decorate(Length(6, 32, { message: '请输入6-32位字符的密码' }))
-  @decorate(IsStrongPassword({ minSymbols: 0 }, { message: '请输入包含数字、大小写字母的密码' }))
   psd!: string
 }
 
