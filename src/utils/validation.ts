@@ -1,7 +1,7 @@
 import { ClassConstructor, plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
 import { error } from 'itty-router'
-import { map } from 'lodash'
+import map from 'lodash/map'
 
 export const validation = async <Cls extends ClassConstructor<any>>(
   cls: Cls,
