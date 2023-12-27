@@ -29,8 +29,10 @@
 
    ```bash
    pnpm serve
+   # npm serve
+# yarn serve
    ```
-
+   
    执行完毕后，若已经申请 cloudflare 账号会弹出授权页面，允许即可
 
 
@@ -42,7 +44,7 @@
   wrangler 是 Cloudflare 开发人员平台命令行界面 （CLI），在这里我们用它管理项目
 
 - [itty-router](https://github.com/kwhitley/itty-router)
-  itty-router 是一个精简的路由库，可以对标 [express](https://github.com/expressjs/express) 和 [koa-router](https://github.com/ZijianHe/koa-router)，它最初是为 [Cloudflare Workers](https://itty.dev/itty-router/runtimes#Cloudflare Workers) 设计的，可用于浏览器、Service Worker、边缘功能或运行时，如 [Node](https://itty.dev/itty-router/runtimes#Node)、[Bun](https://itty.dev/itty-router/runtimes#Bun) 等
+  itty-router 是一个精简的路由库，可以对标 [express](https://github.com/expressjs/express) 和 [koa-router](https://github.com/ZijianHe/koa-router)，它最初是为 [CloudflareWorkers](https://itty.dev/itty-router/runtimes#Cloudflare%20Workers) 设计的，可用于浏览器、Service Worker、边缘功能或运行时，如 [Node](https://itty.dev/itty-router/runtimes#Node)、[Bun](https://itty.dev/itty-router/runtimes#Bun) 等
 
 - [class-validator](https://github.com/typestack/class-validator)，[class-transformer](https://github.com/typestack/class-validator)
   class-validator 是一个流行的检验对象的库，它可以使用装饰器或者函数的方式来检验对象是否符合特定的条件。 
