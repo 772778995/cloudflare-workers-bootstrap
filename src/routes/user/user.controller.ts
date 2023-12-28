@@ -7,12 +7,12 @@ export default Router({ base: '/api/user' })
     return findAll()
   })
 
-  .get('/:id', async ({ $v, query }) => {
-    const user = await $v(UserDto, query)
+  .get('/:id', async ({ $v }) => {
+    const user = await $v.query(UserDto)
     return findOne(user)
   })
 
-  .post('/', async ({ $v, body }) => {
-    const createUserDto = await $v(CreateUserDto, body)
-    return create(createUserDto)
+  .post('/', async ({ $v }) => {
+    const createUserDto = $v.body(CreateUserDto)
+    return createUserDto
   })

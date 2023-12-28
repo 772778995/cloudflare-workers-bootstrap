@@ -4,7 +4,7 @@ import { SpeechToTextDto } from './ai.dto'
 
 export default Router({ base: '/api/ai' })
   // 语音转文本
-  .get('/speech-to-text', async ({ $v, query }, env) => {
-    const speechToTextDto = await $v(SpeechToTextDto, query)
+  .get('/speech-to-text', async ({ $v }, env) => {
+    const speechToTextDto = await $v.query(SpeechToTextDto)
     return speechToText(env, speechToTextDto)
   })
