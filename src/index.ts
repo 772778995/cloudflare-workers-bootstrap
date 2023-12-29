@@ -1,6 +1,6 @@
 import { Res } from './middleware/response.middleware'
 import routes from './routes'
-import { json, error } from 'itty-router'
+import { json } from 'itty-router'
 
 export default {
   fetch: (req: Request, env: Env, ctx: ExecutionContext): Promise<Response> =>
@@ -10,7 +10,8 @@ export default {
       .catch(res => {
         if (res instanceof Res) return json(res)
         const err: Error = res
-        const errorMsg = `${err.name}: ${err.message}`
-        return json({ status: 500, errorMsg })
+        const errorMsgs = `${err.name}: ${err.message}`
+        console.error(err.stack)
+        return json({ status: 500, errorMsg: errorMsgs, stack: err.stack })
       })
 }

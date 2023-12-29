@@ -9,11 +9,7 @@ export const validationMiddleware = async (req: IRequest) => {
     const errors = await validate(dtoInstance)
 
     if (errors.length > 0) {
-      const errMsg = errors
-        .map(error => map(error.constraints))
-        .flat()
-        .map(msg => req.$t(msg))
-        .join('<br/>')
+      const errMsg = errors.map(error => map(error.constraints)).flat()
       return req.$res.error(errMsg)
     }
 
