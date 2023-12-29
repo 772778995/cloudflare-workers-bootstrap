@@ -5,5 +5,5 @@ import { Locale, TranslateKey } from '@/types/i18n.middleware'
 export const i18nMiddleware = async (req: Request) => {
   const locale = (req.headers.get('locale') || 'zh-CN') as Locale
   req.$locale = locale
-  req.$t = (k: TranslateKey) => locales[locale][k]
+  req.$t = (k: TranslateKey) => locales[locale][k] || k
 }
