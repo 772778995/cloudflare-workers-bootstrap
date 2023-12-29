@@ -3,4 +3,6 @@ declare interface Request {
   $t: Translate
 
   $v: Validation
+
+  $res: ResponseFn
 }
