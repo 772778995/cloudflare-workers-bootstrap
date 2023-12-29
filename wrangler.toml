@@ -2,7 +2,7 @@
 name = "cloudflare-workers-bootstrap"
 
 # 入口文件
-main = "src/index.ts"
+main = "backend/index.ts"
 
 # 兼容性日期
 compatibility_date = "2023-12-18"

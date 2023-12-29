@@ -1,9 +1,9 @@
 import { Router, error } from 'itty-router'
 import userController from './user/user.controller'
 import aiController from './ai/ai.controller'
-import { i18nMiddleware } from '@/middleware/i18n.middleware'
-import { validationMiddleware } from '@/middleware/valid.middleware'
-import { responseMiddleware } from '@/middleware/response.middleware'
+import { i18nMiddleware } from '@backend/middleware/i18n.middleware'
+import { validationMiddleware } from '@backend/middleware/valid.middleware'
+import { responseMiddleware } from '@backend/middleware/response.middleware'
 
 const apiController = Router({ base: '/api' })
   .all('/user/*', userController.handle)
