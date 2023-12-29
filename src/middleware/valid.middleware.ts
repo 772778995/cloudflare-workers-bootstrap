@@ -1,6 +1,6 @@
 import { plainToClass } from 'class-transformer'
 import { validate } from 'class-validator'
-import { IRequest, error } from 'itty-router'
+import { IRequest } from 'itty-router'
 import map from 'lodash/map'
 
 export const validationMiddleware = async (req: IRequest) => {
