@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "tamasfe.even-better-toml",
-    "esbenp.prettier-vscode",
-    "lokalise.i18n-ally",
-    "wix.vscode-import-cost"
-  ]
-}
