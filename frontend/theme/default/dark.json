@@ -1,0 +1,65 @@
+{
+  "primary": "#1c1e26",
+  "primary-1": "#333741",
+  "primary-2": "#4a4c59",
+  "primary-3": "#616378",
+  "primary-4": "#73758e",
+  "primary-5": "#8789a4",
+
+  "secondary": "#292b33",
+  "secondary-1": "#40424a",
+  "secondary-2": "#57585f",
+  "secondary-3": "#6e7076",
+  "secondary-4": "#82838a",
+  "secondary-5": "#97989e",
+
+  "accent": "#6b3076",
+  "accent-1": "#82558a",
+  "accent-2": "#9e6aa3",
+  "accent-3": "#bb85bd",
+  "accent-4": "#d19fcd",
+  "accent-5": "#e0b5da",
+
+  "dark": "#1d1d1d",
+  "dark-1": "#383838",
+  "dark-2": "#525252",
+  "dark-3": "#6c6c6c",
+  "dark-4": "#878787",
+  "dark-5": "#a1a1a1",
+
+  "dark-page": "#121212",
+  "dark-page-1": "#262626",
+  "dark-page-2": "#3a3a3a",
+  "dark-page-3": "#4e4e4e",
+  "dark-page-4": "#626262",
+  "dark-page-5": "#767676",
+
+  "positive": "#10542d",
+  "positive-1": "#266d4b",
+  "positive-2": "#3c875f",
+  "positive-3": "#51a177",
+  "positive-4": "#67b88f",
+  "positive-5": "#7bc3a3",
+
+  "negative": "#5c0e1c",
+  "negative-1": "#752c38",
+  "negative-2": "#8e4a55",
+  "negative-3": "#a76871",
+  "negative-4": "#bf867e",
+  "negative-5": "#d5a39a",
+
+  "info": "#155a6c",
+  "info-1": "#2c7484",
+  "info-2": "#439b9e",
+  "info-3": "#5ba1a5",
+  "info-4": "#72a7ab",
+  "info-5": "#89adaf",
+
+  "warning": "#5c4a14",
+  "warning-1": "#786d2a",
+  "warning-2": "#93813f",
+  "warning-3": "#ae9655",
+  "warning-4": "#c9aa6b",
+  "warning-5": "#e4be81"
+}
+

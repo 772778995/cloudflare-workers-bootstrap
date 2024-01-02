@@ -1,0 +1,84 @@
+{
+  "folders": [
+    {
+      "path": "frontend"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "dbaeumer.vscode-eslint",
+      "steoates.autoimport",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "hearhear.html-comment",
+      "kisstkondoros.vscode-gutter-preview",
+      "esbenp.prettier-vscode",
+      "abdelaziz18003.quasar-snippets",
+      "lzp.svg-preview-in-code",
+      "vue.volar",
+      "lokalise.i18n-ally",
+      "stylelint.vscode-stylelint",
+      "voorjaar.windicss-intellisense"
+    ]
+  },
+  "launch": {
+	// 使用 IntelliSense 了解相关属性。
+	// 悬停以查看现有属性的描述。
+	// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+	  {
+		"name": "frontend debugger",
+		"request": "launch",
+		"type": "msedge",
+		"url": "http://localhost:9000",
+		"webRoot": "${workspaceFolder}"
+	  }
+	]
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "i18n-ally.localesPaths": ["./src/i18n/locales/"],
+    "i18n-ally.displayLanguage": "zh-CN",
+    "i18n-ally.enabledFrameworks": ["vue"],
+    "i18n-ally.enabledParsers": ["json"],
+    "i18n-ally.sortKeys": true,
+    "i18n-ally.keystyle": "flat",
+
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+
+    "[html]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false
+  }
+}

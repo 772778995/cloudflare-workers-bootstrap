@@ -1,0 +1,12 @@
+{
+  "name": "quasar-template",
+  "version": "0.0.1",
+  "description": "Quasar Template",
+  "author": "吴浩潮 <772778995@qq.com>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "2.5.0",
+    "@capacitor/cli": "^2.0.0",
+    "@capacitor/core": "^2.0.0"
+  }
+}
