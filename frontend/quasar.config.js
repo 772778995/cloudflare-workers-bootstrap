@@ -61,7 +61,7 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      // publicPath: '/',
+      publicPath: './',
       // analyze: true,
       // env: {},
       // rawDefine: {}
@@ -71,6 +71,7 @@ module.exports = configure(function (/* ctx */) {
       // distDir
 
       extendViteConf(viteConf) {
+        viteConf.base = './'
         viteConf.resolve.alias = Object.assign(viteConf.resolve.alias, {
           '@': path.resolve(__dirname),
           '@backend': path.resolve(__dirname, '../backend'),
