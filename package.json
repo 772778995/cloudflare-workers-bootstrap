@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@cloudflare/ai": "^1.0.47",
-    "@cloudflare/itty-router-openapi": "^1.0.6",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "lodash": "^4.17.21",
