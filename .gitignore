@@ -113,7 +113,6 @@ out
 # Nuxt.js build / generate output
 
 .nuxt
-dist
 
 # Gatsby files
 
@@ -178,7 +177,6 @@ dist
 
 # Quasar core related directories
 /frontend/.quasar
-/frontend/dist
 
 # Cordova related directories and files
 /frontend/src-cordova/node_modules
@@ -193,6 +191,8 @@ dist
 # BEX related directories and files
 /frontend/src-bex/www
 /frontend/src-bex/js/core
+/frontend/dist/capacitor
+/frontend/dist/electron
 
 # Log files
 /frontend/npm-debug.log*
