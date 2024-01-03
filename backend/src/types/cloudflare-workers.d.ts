@@ -4,5 +4,7 @@ declare interface Request {
 
   $v: Validation
 
+  $db: DB
+
   $res: ResponseFn
 }

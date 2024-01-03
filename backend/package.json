@@ -5,20 +5,25 @@
   "scripts": {
     "dev": "wrangler dev",
     "serve": "wrangler deploy",
+    "create-db": "wrangler d1 create my-db",
+    "init-table-users-local": "wrangler d1 execute my-db --local --file=./src/db/users.sql",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",
     "@types/lodash": "^4.14.202",
+    "drizzle-kit": "^0.20.9",
     "itty-router": "^4.0.25",
     "prettier": "^3.1.1",
     "typescript": "^5.0.4",
-    "wrangler": "^3.0.0"
+    "wrangler": "^3.22.2"
   },
   "dependencies": {
     "@cloudflare/ai": "^1.0.47",
+    "@libsql/client": "0.4.0-pre.5",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "drizzle-orm": "^0.29.3",
     "lodash": "^4.17.21",
     "ts-mixer": "^6.0.3"
   }

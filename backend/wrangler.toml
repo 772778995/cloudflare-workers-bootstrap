@@ -4,6 +4,8 @@ name = "cloudflare-workers-bootstrap"
 # 入口文件
 main = "src/index.ts"
 
+node_compat = true
+
 # 兼容性日期
 compatibility_date = "2023-12-18"
 
@@ -15,6 +17,11 @@ compatibility_date = "2023-12-18"
 
 [ai]
 binding = "AI"
+
+[[d1_databases]]
+binding = "DB"                                       # i.e. available in your Worker on env.DB
+database_name = "my-db"
+database_id = "37b3eac5-157c-4c3b-8601-63b239123d75"
 
 # 绑定 KV 命名空间。使用 KV 作为小型键值对的持久存储。
 # 文档：https://developers.cloudflare.com/workers/runtime-apis/kv
