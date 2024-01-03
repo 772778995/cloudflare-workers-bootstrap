@@ -1,10 +1,23 @@
 import { Mixin, decorate } from 'ts-mixer'
-import { IsMobilePhone, IsNumberString, Length } from 'class-validator'
+import { IsEmail, IsMobilePhone, IsNumberString, Length } from 'class-validator'
 
-export class UserPhoneDto {
-  /** 手机号码 */
-  @decorate(IsMobilePhone('zh-CN', {}, { message: '请输入有效的手机号码' }))
-  phone!: string
+// export class UserPhoneDto {
+//   /** 手机号码 */
+//   @decorate(IsMobilePhone('zh-CN', {}, { message: '请输入有效的手机号码' }))
+//   phone!: string
+// }
+
+const emailDeorate = decorate(IsEmail({}, { message: '请输入有效的邮箱' }))
+export class UserEmailDto {
+  /** 邮箱 */
+  @emailDeorate
+  email!: string
+}
+
+export class UserEmailOptionalDto {
+  /** 邮箱 */
+  @emailDeorate
+  email: string
 }
 
 export class UserPsdDto {
@@ -20,5 +33,6 @@ export class CaptchaDto {
   captcha!: string
 }
 
-export class UserDto extends Mixin(UserPhoneDto, UserPsdDto) {}
-export class CreateUserDto extends Mixin(UserDto, CaptchaDto) {}
+export class UserDto extends Mixin(UserEmailDto, UserPsdDto) {}
+export class CreateUserDto extends Mixin(UserDto, UserPsdDto, CaptchaDto) {}
+export class UpdateUserDto extends Mixin(UserEmailOptionalDto, UserPsdDto) {}
