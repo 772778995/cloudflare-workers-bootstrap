@@ -20,7 +20,7 @@ type ResSchema<D = any> = {
 }
 
 type ResponseFn = {
-  <R extends ResSchema>(res: R): R['data']
+  <R extends ResSchema>(res: R): R
   return: <D extends any>(data: D) => ResSchema<D>
   success: (data: ResMsg) => ResSchema<void>
   info: (data: ResMsg) => ResSchema<void>
