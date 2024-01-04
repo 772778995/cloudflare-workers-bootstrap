@@ -1,4 +1,5 @@
-import { Router, error } from 'itty-router'
+import { Router } from 'itty-router'
+import captchaController from './captcha/captcha.controller'
 import userController from './user/user.controller'
 import aiController from './ai/ai.controller'
 import { i18nMiddleware } from '@/middleware/i18n.middleware'
@@ -7,6 +8,7 @@ import { responseMiddleware } from '@/middleware/response.middleware'
 import { dbMiddleware } from '@/middleware/db.middleware'
 
 const apiController = Router({ base: '/api' })
+  .all('/captcha/*', captchaController.handle)
   .all('/user/*', userController.handle)
   .all('/ai/*', aiController.handle)
 
