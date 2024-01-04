@@ -1,4 +1,6 @@
 {
+  "尊敬的用户您正在进行注册操作，以下验证码在十分钟内有效，如不是您本人操作，请忽略。验证码：": "Cher utilisateur, vous êtes en train de vous inscrire. Le code de vérification suivant est valable dans les dix minutes. Si vous ne l'avez pas fait, veuillez l'ignorer. \nLe code de vérification:",
+  "已发送邮箱验证码，请注意查收": "Le code de vérification par e-mail a été envoyé, veuillez le vérifier attentivement",
   "已存在的邮箱": "Boîte aux lettres existante",
   "注册用户成功": "Utilisateur enregistré avec succès",
   "请提供有效的音频文件地址": "Veuillez fournir une adresse de fichier audio valide",
