@@ -19,7 +19,7 @@ export const createUser = async (req: IRequest) => {
 
   await $db.insert(userEntity).values({ email, psd })
 
-  $res.success('注册用户成功')
+  return $res.success('注册用户成功')
 }
 
 export const findOne = (user: UserDto) => {

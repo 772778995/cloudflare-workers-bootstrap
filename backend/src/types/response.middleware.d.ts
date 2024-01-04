@@ -1,10 +1,14 @@
 type ResMsg = string | string[]
 
-type ResSchema = {
-  /** 响应状态码 */
+type ResSchema<D = any> = {
+  /**
+   * 响应状态码
+   * @default 200 // success
+   * @default 400 // error
+   */
   status?: number
   /** 响应数据 */
-  data?: any
+  data?: D
   /** 成功消息 */
   successMsgs?: ResMsg
   /** 默认消息 */
@@ -16,10 +20,10 @@ type ResSchema = {
 }
 
 type ResponseFn = {
-  (data: ResSchema): ResSchema
-  return: (data) => ResSchema
-  success: (data: ResMsg) => ResSchema
-  info: (data: ResMsg) => ResSchema
-  warning: (data: ResMsg) => ResSchema
-  error: (data: ResMsg) => ResSchema
+  <D extends ResSchema>(data: D): ResSchema<D>
+  return: <D extends any>(data: D) => ResSchema<D>
+  success: (data: ResMsg) => ResSchema<void>
+  info: (data: ResMsg) => ResSchema<void>
+  warning: (data: ResMsg) => ResSchema<void>
+  error: (data: ResMsg) => ResSchema<void>
 }
