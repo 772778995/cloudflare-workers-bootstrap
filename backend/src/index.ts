@@ -1,10 +1,10 @@
 import { Res } from './middleware/response.middleware'
-import routes from './routes'
+import api from './api'
 import { json } from 'itty-router'
 
 export default {
   fetch: (req: Request, env: Env, ctx: ExecutionContext): Promise<Response> =>
-    routes
+    api
       .handle(req, env, ctx)
       .then(json)
       .catch(res => {
