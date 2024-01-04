@@ -12,6 +12,6 @@ export default {
         const err: Error = res
         const errorMsgs = `${err.name}: ${err.message}`
         console.error(err.stack)
-        return json({ status: 500, errorMsg: errorMsgs, stack: err.stack })
+        return json({ status: 500, errorMsgs, stack: err.stack })
       })
 }
