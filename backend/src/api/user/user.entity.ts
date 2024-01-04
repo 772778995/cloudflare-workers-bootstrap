@@ -2,7 +2,6 @@ import { sql } from 'drizzle-orm'
 import { text, integer, sqliteTable } from 'drizzle-orm/sqlite-core'
 
 export const userEntity = sqliteTable('users', {
-  /** 主键 */
   id: integer('id').primaryKey(),
   phone: text('phone').unique(),
   email: text('email').notNull().unique(),

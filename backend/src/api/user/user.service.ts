@@ -1,10 +1,11 @@
 import { IRequest } from 'itty-router'
-import { CreateUserDto, UserDto } from './user.dto'
 import { userEntity } from './user.entity'
 import { eq } from 'drizzle-orm'
+import { CreateUserDto } from './dto/create-user.dto'
+import { UserDto } from './dto/user.dto'
 
 /** 通过邮箱地址获取用户信息 */
-const getUserByEmail = async ({ $db }: IRequest, email: string) => {
+export const getUserByEmail = async ({ $db }: IRequest, email: string) => {
   const [user] = await $db.select().from(userEntity).where(eq(userEntity.email, email))
   return user
 }
