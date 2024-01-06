@@ -1,5 +1,5 @@
-import { locales } from '@/i18n'
-import { Locale, TranslateKey } from '@/types/i18n.middleware'
+import { locales } from '~/i18n'
+import { Locale, TranslateKey } from '~/types/i18n.middleware'
 
 /** 语言国际化中间件 */
 export const i18nMiddleware = async (req: Request) => {

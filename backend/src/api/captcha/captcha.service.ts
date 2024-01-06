@@ -3,7 +3,7 @@ import { getUserByEmail } from '../user/user.service'
 import random from 'lodash/random'
 import { SendEmailCaptchaDto } from './dto/send-email-captcha.dto'
 import { CaptchaTypeEnum } from './dto/captcha-type.dto'
-import { sendMail } from '@/utils/mailer'
+import { sendMail } from '~/utils/mailer'
 
 /** 发送邮件验证码 */
 export const sendEmailCaptcha = async (req: IRequest) => {
