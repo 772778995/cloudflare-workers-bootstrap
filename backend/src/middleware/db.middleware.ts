@@ -6,8 +6,7 @@ export const dbMiddleware: any = async (req: IRequest, env: Env) => {
   req.$db = (() => {
     let db: DB
     return () => {
-      db = drizzle(env.DB)
-      req.$db = () => db!
+      if (!db) db = drizzle(env.DB)
       return db
     }
   })()
