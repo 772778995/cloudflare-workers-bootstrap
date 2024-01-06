@@ -13,6 +13,7 @@
     ]
   },
   "settings": {
+    "git.openRepositoryInParentFolders": "always",
     "editor.formatOnSave": true,
     "i18n-ally.sortKeys": true,
     "i18n-ally.keystyle": "flat",

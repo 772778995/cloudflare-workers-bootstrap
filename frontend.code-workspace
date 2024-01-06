@@ -38,6 +38,7 @@
 	]
   },
   "settings": {
+    "git.openRepositoryInParentFolders": "always",
     "editor.formatOnSave": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "i18n-ally.localesPaths": ["./src/i18n/locales/"],
