@@ -4,7 +4,7 @@ declare interface Request {
 
   $v: Validation
 
-  $db: DB
+  $db: () => DB
 
   $kv: KVNamespace
 
