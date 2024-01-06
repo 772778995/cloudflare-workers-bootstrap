@@ -6,5 +6,7 @@ declare interface Request {
 
   $db: DB
 
+  $kv: KVNamespace
+
   $res: ResponseFn
 }

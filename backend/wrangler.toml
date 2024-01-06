@@ -25,9 +25,9 @@ database_id = "37b3eac5-157c-4c3b-8601-63b239123d75"
 
 # 绑定 KV 命名空间。使用 KV 作为小型键值对的持久存储。
 # 文档：https://developers.cloudflare.com/workers/runtime-apis/kv
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "KV"
+id = "bbc818d1bb444f4b9658b36439d3be55"
 
 # 绑定 R2 存储桶。使用 R2 存储任意大小的数据块，例如文件。
 # 文档：https://developers.cloudflare.com/r2/api/workers/workers-api-usage/

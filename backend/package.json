@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "serve": "wrangler deploy",
+    "create-kv": "wrangler kv:namespace create KV",
     "create-db": "wrangler d1 create my-db",
     "init-table-users-local": "wrangler d1 execute my-db --local --file=./src/db/users.sql",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore"

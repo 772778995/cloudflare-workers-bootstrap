@@ -6,6 +6,7 @@ import { i18nMiddleware } from '@/middleware/i18n.middleware'
 import { validationMiddleware } from '@/middleware/valid.middleware'
 import { responseMiddleware } from '@/middleware/response.middleware'
 import { dbMiddleware } from '@/middleware/db.middleware'
+import { kvMiddleware } from '@/middleware/kv.middleware'
 
 const apiController = Router({ base: '/api' })
   .all('/captcha/*', captchaController.handle)
@@ -13,6 +14,14 @@ const apiController = Router({ base: '/api' })
   .all('/ai/*', aiController.handle)
 
 export default Router()
-  .all('*', i18nMiddleware, responseMiddleware, validationMiddleware, dbMiddleware)
+  .all(
+    //
+    '*',
+    i18nMiddleware,
+    responseMiddleware,
+    validationMiddleware,
+    kvMiddleware,
+    dbMiddleware
+  )
   .all('/api/*', apiController.handle)
   .all('*', ({ $res, $t }) => $res({ status: 404, errorMsgs: $t('资源不存在或已删除') }))
