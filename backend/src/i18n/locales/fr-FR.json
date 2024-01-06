@@ -9,5 +9,6 @@
   "请输入有效的手机号码": "s'il vous plaît entrer un numéro de téléphone valide",
   "请输入有效的邮箱": "S'il vous plaît, mettez une adresse email valide",
   "请输入有效的验证码": "Veuillez saisir un code de vérification valide",
+  "账号或密码错误": "identifiant ou mot de passe incorrect",
   "资源不存在或已删除": "La ressource n'existe pas ou a été supprimée"
 }

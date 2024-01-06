@@ -1,15 +1,8 @@
 import { Router } from 'itty-router'
-import { createUser, findAll, findOne } from './user.service'
-import { UserDto } from './dto/user.dto'
+import { createUser, loginByPsd } from './user.service'
 
 export default Router({ base: '/api/user' })
-  .get('/', () => {
-    return findAll()
-  })
-
-  .get('/:id', async ({ $v }) => {
-    const user = await $v.query(UserDto)
-    return findOne(user)
-  })
-
-  .post('/', createUser)
+  // 注册
+  .post('/register', createUser)
+  // 密码登录
+  .post('/login-psd', loginByPsd)

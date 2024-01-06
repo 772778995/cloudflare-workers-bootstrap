@@ -1,8 +1,9 @@
 import { IRequest } from 'itty-router'
 import { userEntity } from './user.entity'
-import { eq } from 'drizzle-orm'
+import { and, eq } from 'drizzle-orm'
 import { CreateUserDto } from './dto/create-user.dto'
-import { UserDto } from './dto/user.dto'
+import { PsdLoginDto } from './dto/psd-login.dto'
+import { isEmail } from 'class-validator'
 
 /** 通过邮箱地址获取用户信息 */
 export const getUserByEmail = async ({ $db }: IRequest, email: string) => {
@@ -23,18 +24,21 @@ export const createUser = async (req: IRequest) => {
   return $res.success('注册用户成功')
 }
 
-export const findOne = (user: UserDto) => {
-  return user
-}
+/** TODO 密码登录 */
+export const loginByPsd = async ({ $v, $db, $res }: IRequest) => {
+  const { account, psd } = await $v.body(PsdLoginDto)
+  const accountType = isEmail(account) ? 'email' : 'phone'
 
-export const findAll = () => {
-  return [{ xxx: '1234' }, { xxx: '1234' }, { xxx: '1234' }, { xxx: '1234' }]
-}
+  const [userInfo] = await $db
+    .select()
+    .from(userEntity)
+    .where(
+      and(
+        eq(userEntity[accountType], account), // 校验账号
+        eq(userEntity.psd, psd) // 检验密码
+      )
+    )
 
-export const update = () => {
-  return { xxx: '1234' }
-}
-
-export const remove = () => {
-  return { xxx: '1234' }
+  if (!userInfo) $res.error('账号或密码错误')
+  return $res.return(userInfo)
 }
