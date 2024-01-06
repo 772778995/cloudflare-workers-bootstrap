@@ -14,14 +14,11 @@ const apiController = Router({ base: '/api' })
   .all('/ai/*', aiController.handle)
 
 export default Router()
-  .all(
-    //
-    '*',
-    i18nMiddleware,
-    responseMiddleware,
-    validationMiddleware,
-    kvMiddleware,
-    dbMiddleware
-  )
+  // 中间件
+  .all('*', i18nMiddleware, responseMiddleware, validationMiddleware, kvMiddleware, dbMiddleware)
+
+  // 业务逻辑
   .all('/api/*', apiController.handle)
+
+  // 404
   .all('*', ({ $res, $t }) => $res({ status: 404, errorMsgs: $t('资源不存在或已删除') }))
