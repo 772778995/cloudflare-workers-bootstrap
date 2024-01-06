@@ -4,6 +4,8 @@ declare interface Request {
 
   $v: Validation
 
+  $body: <T = any>() => Promise<T>
+
   $db: () => DB
 
   $kv: KVNamespace

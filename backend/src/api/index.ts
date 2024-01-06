@@ -7,6 +7,7 @@ import { validationMiddleware } from '@/middleware/valid.middleware'
 import { responseMiddleware } from '@/middleware/response.middleware'
 import { dbMiddleware } from '@/middleware/db.middleware'
 import { kvMiddleware } from '@/middleware/kv.middleware'
+import { bodyMiddleware } from '@/middleware/body.middleware'
 
 const apiController = Router({ base: '/api' })
   .all('/captcha/*', captchaController.handle)
@@ -15,7 +16,15 @@ const apiController = Router({ base: '/api' })
 
 export default Router()
   // 中间件
-  .all('*', i18nMiddleware, responseMiddleware, validationMiddleware, kvMiddleware, dbMiddleware)
+  .all(
+    '*',
+    i18nMiddleware,
+    bodyMiddleware,
+    responseMiddleware,
+    validationMiddleware,
+    kvMiddleware,
+    dbMiddleware
+  )
 
   // 业务逻辑
   .all('/api/*', apiController.handle)

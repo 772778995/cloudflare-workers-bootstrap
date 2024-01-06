@@ -17,5 +17,5 @@ export const validationMiddleware = async (req: IRequest) => {
   }) as Validation
 
   req.$v.query = cls => req.$v(cls, req.query)
-  req.$v.body = async cls => req.$v(cls, await req.json())
+  req.$v.body = async cls => req.$v(cls, await req.$body())
 }
