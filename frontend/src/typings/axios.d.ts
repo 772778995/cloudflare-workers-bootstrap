@@ -1,8 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 // TypeScript Version: 4.1
-import { Urls, ApiDetails } from './apis'
-
+import { Urls, Api as ApiDetails } from '~/types/apis'
 type AxiosHeaderValue = AxiosHeaders | string | string[] | number | boolean | null
 type RawAxiosHeaders = Record<string, AxiosHeaderValue>
 
@@ -608,4 +607,3 @@ export interface AxiosStatic extends AxiosInstance {
 declare const axios: AxiosStatic
 
 export default axios
-
