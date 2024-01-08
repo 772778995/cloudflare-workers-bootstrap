@@ -13,6 +13,20 @@ export type ApiSchema = {
   response?: Obj
 }
 
+/** 分页查询参数 */
+export type PaginationQuery = {
+  /**
+   * 当前页码
+   * @default 1
+   */
+  page: number
+  /**
+   * 每页显示的记录数
+   * @default 10
+   */
+  size: number
+}
+
 export interface Get {}
 export interface Post {}
 export interface Put {}
