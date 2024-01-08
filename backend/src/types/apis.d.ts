@@ -1,6 +1,17 @@
+import { Obj } from './common'
+
 export type DevBaseURL = 'http://127.0.0.1:8787/api'
 export type ProdBaseURL = 'https://api.example.com/api'
 export type BaseURL = ProdBaseURL | DevBaseURL
+
+export type ApiSchema = {
+  /** url 参数 */
+  query?: Obj
+  /** 表单数据 */
+  body?: Obj
+  /** 响应数据 */
+  response?: Obj
+}
 
 export interface Get {}
 export interface Post {}
