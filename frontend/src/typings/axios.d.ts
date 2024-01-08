@@ -1,7 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 // TypeScript Version: 4.1
-import { Urls, Api as ApiDetails, BaseURL } from '~/types/apis'
+import { Urls, Api, BaseURL } from '~/types/apis'
 type AxiosHeaderValue = AxiosHeaders | string | string[] | number | boolean | null
 type RawAxiosHeaders = Record<string, AxiosHeaderValue>
 
@@ -197,7 +197,7 @@ export enum HttpStatusCode {
   NetworkAuthenticationRequired = 511
 }
 
-export type Method = keyof (keyof ApiDetailstails)
+export type Method = keyof (keyof Apitails)
 
 export type ResponseType =
   | 'arraybuffer'
@@ -304,8 +304,8 @@ type Milliseconds = number
 export interface AxiosRequestConfig<
   D = any,
   U = Urls['all'],
-  M = keyof ApiDetails,
-  P = ApiDetails[M][U]['params'],
+  M = keyof Api,
+  P = Api[M][U]['params'],
   C =
     | 'application/json'
     | 'multipart/form-data'
@@ -483,12 +483,12 @@ export class Axios {
    * - 对服务器的操作是幂等的，多次相同的 GET 请求应该返回相同的结果。
    */
   get<
-    T extends ApiDetails['get'][U]['response'],
+    T extends Api['get'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['get'],
-    D extends ApiDetails['get'][U]['data'],
-    P extends ApiDetails['get'][U]['params'],
-    C extends ApiDetails['get'][U]['contentType']
+    U extends keyof Api['get'],
+    D extends Api['get'][U]['data'],
+    P extends Api['get'][U]['params'],
+    C extends Api['get'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 用于请求服务器删除指定的资源。
@@ -496,36 +496,36 @@ export class Axios {
    * - 对服务器的操作是幂等的。
    */
   delete<
-    T extends ApiDetails['delete'][U]['response'],
+    T extends Api['delete'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['delete'],
-    D extends ApiDetails['delete'][U]['data'],
-    P extends ApiDetails['delete'][U]['params'],
-    C extends ApiDetails['delete'][U]['contentType']
+    U extends keyof Api['delete'],
+    D extends Api['delete'][U]['data'],
+    P extends Api['delete'][U]['params'],
+    C extends Api['delete'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 类似于 GET 请求，但不返回实际的数据主体，只返回响应头信息。
    * - 主要用于检查资源的元信息，如最后修改时间。
    */
   head<
-    T extends ApiDetails['head'][U]['response'],
+    T extends Api['head'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['head'],
-    D extends ApiDetails['head'][U]['data'],
-    P extends ApiDetails['head'][U]['params'],
-    C extends ApiDetails['head'][U]['contentType']
+    U extends keyof Api['head'],
+    D extends Api['head'][U]['data'],
+    P extends Api['head'][U]['params'],
+    C extends Api['head'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 用于请求关于目标资源的信息，或者关于服务器的其他可用选项的信息。
    * - 通常在 CORS（跨域资源共享）中使用。
    */
   options<
-    T extends ApiDetails['options'][U]['response'],
+    T extends Api['options'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['options'],
-    D extends ApiDetails['options'][U]['data'],
-    P extends ApiDetails['options'][U]['params'],
-    C extends ApiDetails['options'][U]['contentType']
+    U extends keyof Api['options'],
+    D extends Api['options'][U]['data'],
+    P extends Api['options'][U]['params'],
+    C extends Api['options'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 用于向服务器提交数据，通常用于创建新资源。
@@ -533,12 +533,12 @@ export class Axios {
    * - 对服务器的操作不是幂等的，即多次相同的 POST 请求可能会导致不同的结果
    */
   post<
-    T extends ApiDetails['post'][U]['response'],
+    T extends Api['post'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['post'],
-    D extends ApiDetails['post'][U]['data'],
-    P extends ApiDetails['post'][U]['params'],
-    C extends ApiDetails['post'][U]['contentType']
+    U extends keyof Api['post'],
+    D extends Api['post'][U]['data'],
+    P extends Api['post'][U]['params'],
+    C extends Api['post'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 用于向服务器更新或创建资源。
@@ -546,12 +546,12 @@ export class Axios {
    * - 对服务器的操作是幂等的，即多次相同的 PUT 请求应该具有相同的结果。
    */
   put<
-    T extends ApiDetails['put'][U]['response'],
+    T extends Api['put'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['put'],
-    D extends ApiDetails['put'][U]['data'],
-    P extends ApiDetails['put'][U]['params'],
-    C extends ApiDetails['put'][U]['contentType']
+    U extends keyof Api['put'],
+    D extends Api['put'][U]['data'],
+    P extends Api['put'][U]['params'],
+    C extends Api['put'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
    * - 用于对资源进行部分更新。
@@ -559,36 +559,36 @@ export class Axios {
    * - 对服务器的操作通常不是幂等的。
    */
   patch<
-    T extends ApiDetails['patch'][U]['response'],
+    T extends Api['patch'][U]['response'],
     R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['patch'],
-    D extends ApiDetails['patch'][U]['data'],
-    P extends ApiDetails['patch'][U]['params'],
-    C extends ApiDetails['patch'][U]['contentType']
+    U extends keyof Api['patch'],
+    D extends Api['patch'][U]['data'],
+    P extends Api['patch'][U]['params'],
+    C extends Api['patch'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // postForm<
-  //   T extends ApiDetails['postform'][U]['response'],
+  //   T extends Api['postform'][U]['response'],
   //   R extends AxiosResponse<T>,
-  //   U extends keyof ApiDetails['postform'],
-  //   D extends ApiDetails['postform'][U]['data'],
-  //   P extends ApiDetails['postform'][U]['params'],
-  //   C extends ApiDetails['postform'][U]['contentType']
+  //   U extends keyof Api['postform'],
+  //   D extends Api['postform'][U]['data'],
+  //   P extends Api['postform'][U]['params'],
+  //   C extends Api['postform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // putForm<
-  //   T extends ApiDetails['putform'][U]['response'],
+  //   T extends Api['putform'][U]['response'],
   //   R extends AxiosResponse<T>,
-  //   U extends keyof ApiDetails['putform'],
-  //   D extends ApiDetails['putform'][U]['data'],
-  //   P extends ApiDetails['putform'][U]['params'],
-  //   C extends ApiDetails['putform'][U]['contentType']
+  //   U extends keyof Api['putform'],
+  //   D extends Api['putform'][U]['data'],
+  //   P extends Api['putform'][U]['params'],
+  //   C extends Api['putform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // patchForm<
-  //   T extends ApiDetails['patchform'][U]['response'],
+  //   T extends Api['patchform'][U]['response'],
   //   R extends AxiosResponse<T>,
-  //   U extends keyof ApiDetails['patchform'],
-  //   D extends ApiDetails['patchform'][U]['data'],
-  //   P extends ApiDetails['patchform'][U]['params'],
-  //   C extends ApiDetails['patchform'][U]['contentType']
+  //   U extends keyof Api['patchform'],
+  //   D extends Api['patchform'][U]['data'],
+  //   P extends Api['patchform'][U]['params'],
+  //   C extends Api['patchform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
 }
 
