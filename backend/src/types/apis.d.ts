@@ -1,3 +1,7 @@
+export type DevBaseURL = 'http://127.0.0.1:8787/api'
+export type ProdBaseURL = 'https://api.example.com/api'
+export type BaseURL = ProdBaseURL | DevBaseURL
+
 export interface Get {}
 export interface Post {}
 export interface Put {}

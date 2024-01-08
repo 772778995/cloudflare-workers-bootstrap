@@ -1,7 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 // TypeScript Version: 4.1
-import { Urls, Api as ApiDetails } from '~/types/apis'
+import { Urls, Api as ApiDetails, BaseURL } from '~/types/apis'
 type AxiosHeaderValue = AxiosHeaders | string | string[] | number | boolean | null
 type RawAxiosHeaders = Record<string, AxiosHeaderValue>
 
@@ -314,7 +314,7 @@ export interface AxiosRequestConfig<
 > {
   url?: U
   method?: M | Uppercase<M>
-  baseURL?: string
+  baseURL?: BaseURL
   transformRequest?: AxiosRequestTransformer | AxiosRequestTransformer[]
   transformResponse?: AxiosResponseTransformer | AxiosResponseTransformer[]
   headers?: RawAxiosRequestHeaders & { 'Content-Type'?: C }
