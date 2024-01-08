@@ -1,7 +1,7 @@
 import { Obj } from './common'
 
-export type DevBaseURL = 'http://127.0.0.1:8787/api'
-export type ProdBaseURL = 'https://api.example.com/api'
+export type DevBaseURL = 'http://127.0.0.1:8787'
+export type ProdBaseURL = 'https://api.example.com'
 export type BaseURL = ProdBaseURL | DevBaseURL
 
 export type ApiSchema = {

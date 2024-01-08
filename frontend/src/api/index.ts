@@ -5,7 +5,7 @@ import throwError from '../utils/throwError'
 import { Notify } from 'quasar'
 
 const Axios = _Axios as AxiosStatic
-const api = Axios.create({ baseURL: 'http://127.0.0.1:8787/api' })
+const api = Axios.create({ baseURL: 'http://127.0.0.1:8787' })
 
 export const reqs = ref(0)
 
