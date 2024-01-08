@@ -1,25 +1,29 @@
-declare interface Request {
-  /**
-   * 语言环境
-   * @default 'zh-CN'
-   */
-  $locale: Locale
+import { Locale, Translate } from './i18n.middleware'
 
-  /** 翻译 */
-  $t: Translate
+declare global {
+  interface Request {
+    /**
+     * 语言环境
+     * @default 'zh-CN'
+     */
+    $locale: Locale
 
-  /** 校验数据 */
-  $v: Validation
+    /** 翻译 */
+    $t: Translate
 
-  /** 表单数据 */
-  $body: <T = any>() => Promise<T>
+    /** 校验数据 */
+    $v: Validation
 
-  /** 获取数据库 */
-  $db: () => DB
+    /** 表单数据 */
+    $body: <T = any>() => Promise<T>
 
-  /** 键值对存储 */
-  $kv: KVNamespace
+    /** 获取数据库 */
+    $db: () => DB
 
-  /** 响应 */
-  $res: ResponseFn
+    /** 键值对存储 */
+    $kv: KVNamespace
+
+    /** 响应 */
+    $res: ResponseFn
+  }
 }
