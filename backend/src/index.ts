@@ -1,5 +1,5 @@
 import { Res } from './middleware/response.middleware'
-import api from './api'
+import api, { corsify } from './api'
 import { json } from 'itty-router'
 
 export default {
@@ -14,4 +14,5 @@ export default {
         console.error(err.stack)
         return json({ status: 500, errorMsgs, stack: err.stack })
       })
+      .then(corsify)
 }

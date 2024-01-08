@@ -1,4 +1,4 @@
-import { Router } from 'itty-router'
+import { Router, createCors } from 'itty-router'
 import captchaController from './captcha/captcha.controller'
 import userController from './user/user.controller'
 import aiController from './ai/ai.controller'
@@ -9,6 +9,12 @@ import { dbMiddleware } from '~/middleware/db.middleware'
 import { kvMiddleware } from '~/middleware/kv.middleware'
 import { bodyMiddleware } from '~/middleware/body.middleware'
 
+// 跨域处理
+const { preflight, corsify } = createCors({
+  origins: ['http://localhost:5408']
+})
+export { corsify }
+
 const apiController = Router({ base: '/api' })
   .all('/captcha/*', captchaController.handle)
   .all('/user/*', userController.handle)
@@ -18,6 +24,7 @@ export default Router()
   // 中间件
   .all(
     '*',
+    preflight,
     i18nMiddleware,
     bodyMiddleware,
     responseMiddleware,
