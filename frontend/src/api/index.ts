@@ -1,5 +1,6 @@
 import _Axios from 'axios'
 import { AxiosStatic } from '@/src/typings/axios'
+import { AxiosInstance } from 'axios'
 import throwError from '../utils/throwError'
 import { Notify } from 'quasar'
 
@@ -49,6 +50,8 @@ api.interceptors.response.use(
 )
 
 export default api
+/** 不带类型的 axios */
+export const axios = api as AxiosInstance
 
 declare module '@/src/typings/axios' {
   // export interface AxiosResponse<T = any, D = any> {
@@ -62,3 +65,4 @@ declare module '@/src/typings/axios' {
   // @ts-ignore
   export type AxiosResponse<T> = T['data']
 }
+
