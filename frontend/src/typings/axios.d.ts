@@ -568,30 +568,30 @@ export class Axios {
     P extends ApiDetails['patch'][U]['params'],
     C extends ApiDetails['patch'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
-  postForm<
-    T extends ApiDetails['postform'][U]['response'],
-    R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['postform'],
-    D extends ApiDetails['postform'][U]['data'],
-    P extends ApiDetails['postform'][U]['params'],
-    C extends ApiDetails['postform'][U]['contentType']
-  >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
-  putForm<
-    T extends ApiDetails['putform'][U]['response'],
-    R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['putform'],
-    D extends ApiDetails['putform'][U]['data'],
-    P extends ApiDetails['putform'][U]['params'],
-    C extends ApiDetails['putform'][U]['contentType']
-  >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
-  patchForm<
-    T extends ApiDetails['patchform'][U]['response'],
-    R extends AxiosResponse<T>,
-    U extends keyof ApiDetails['patchform'],
-    D extends ApiDetails['patchform'][U]['data'],
-    P extends ApiDetails['patchform'][U]['params'],
-    C extends ApiDetails['patchform'][U]['contentType']
-  >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  // postForm<
+  //   T extends ApiDetails['postform'][U]['response'],
+  //   R extends AxiosResponse<T>,
+  //   U extends keyof ApiDetails['postform'],
+  //   D extends ApiDetails['postform'][U]['data'],
+  //   P extends ApiDetails['postform'][U]['params'],
+  //   C extends ApiDetails['postform'][U]['contentType']
+  // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  // putForm<
+  //   T extends ApiDetails['putform'][U]['response'],
+  //   R extends AxiosResponse<T>,
+  //   U extends keyof ApiDetails['putform'],
+  //   D extends ApiDetails['putform'][U]['data'],
+  //   P extends ApiDetails['putform'][U]['params'],
+  //   C extends ApiDetails['putform'][U]['contentType']
+  // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  // patchForm<
+  //   T extends ApiDetails['patchform'][U]['response'],
+  //   R extends AxiosResponse<T>,
+  //   U extends keyof ApiDetails['patchform'],
+  //   D extends ApiDetails['patchform'][U]['data'],
+  //   P extends ApiDetails['patchform'][U]['params'],
+  //   C extends ApiDetails['patchform'][U]['contentType']
+  // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
 }
 
 export interface AxiosInstance extends Axios {
