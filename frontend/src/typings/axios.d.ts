@@ -305,7 +305,7 @@ export interface AxiosRequestConfig<
   D = any,
   U = Urls['all'],
   M = keyof Api,
-  P = Api[M][U]['params'],
+  P = Api[M][U]['query'],
   C =
     | 'application/json'
     | 'multipart/form-data'
@@ -487,7 +487,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['get'],
     D extends Api['get'][U]['body'],
-    P extends Api['get'][U]['params'],
+    P extends Api['get'][U]['query'],
     C extends Api['get'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -500,7 +500,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['delete'],
     D extends Api['delete'][U]['body'],
-    P extends Api['delete'][U]['params'],
+    P extends Api['delete'][U]['query'],
     C extends Api['delete'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -512,7 +512,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['head'],
     D extends Api['head'][U]['body'],
-    P extends Api['head'][U]['params'],
+    P extends Api['head'][U]['query'],
     C extends Api['head'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -524,7 +524,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['options'],
     D extends Api['options'][U]['body'],
-    P extends Api['options'][U]['params'],
+    P extends Api['options'][U]['query'],
     C extends Api['options'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -537,7 +537,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['post'],
     D extends Api['post'][U]['body'],
-    P extends Api['post'][U]['params'],
+    P extends Api['post'][U]['query'],
     C extends Api['post'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -550,7 +550,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['put'],
     D extends Api['put'][U]['body'],
-    P extends Api['put'][U]['params'],
+    P extends Api['put'][U]['query'],
     C extends Api['put'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   /**
@@ -563,7 +563,7 @@ export class Axios {
     R extends AxiosResponse<T>,
     U extends keyof Api['patch'],
     D extends Api['patch'][U]['body'],
-    P extends Api['patch'][U]['params'],
+    P extends Api['patch'][U]['query'],
     C extends Api['patch'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // postForm<
@@ -571,7 +571,7 @@ export class Axios {
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['postform'],
   //   D extends Api['postform'][U]['body'],
-  //   P extends Api['postform'][U]['params'],
+  //   P extends Api['postform'][U]['query'],
   //   C extends Api['postform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // putForm<
@@ -579,7 +579,7 @@ export class Axios {
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['putform'],
   //   D extends Api['putform'][U]['body'],
-  //   P extends Api['putform'][U]['params'],
+  //   P extends Api['putform'][U]['query'],
   //   C extends Api['putform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
   // patchForm<
@@ -587,7 +587,7 @@ export class Axios {
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['patchform'],
   //   D extends Api['patchform'][U]['body'],
-  //   P extends Api['patchform'][U]['params'],
+  //   P extends Api['patchform'][U]['query'],
   //   C extends Api['patchform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
 }
