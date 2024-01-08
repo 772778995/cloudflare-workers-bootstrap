@@ -486,7 +486,7 @@ export class Axios {
     T extends Api['get'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['get'],
-    D extends Api['get'][U]['data'],
+    D extends Api['get'][U]['body'],
     P extends Api['get'][U]['params'],
     C extends Api['get'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -499,7 +499,7 @@ export class Axios {
     T extends Api['delete'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['delete'],
-    D extends Api['delete'][U]['data'],
+    D extends Api['delete'][U]['body'],
     P extends Api['delete'][U]['params'],
     C extends Api['delete'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -511,7 +511,7 @@ export class Axios {
     T extends Api['head'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['head'],
-    D extends Api['head'][U]['data'],
+    D extends Api['head'][U]['body'],
     P extends Api['head'][U]['params'],
     C extends Api['head'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -523,7 +523,7 @@ export class Axios {
     T extends Api['options'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['options'],
-    D extends Api['options'][U]['data'],
+    D extends Api['options'][U]['body'],
     P extends Api['options'][U]['params'],
     C extends Api['options'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -536,7 +536,7 @@ export class Axios {
     T extends Api['post'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['post'],
-    D extends Api['post'][U]['data'],
+    D extends Api['post'][U]['body'],
     P extends Api['post'][U]['params'],
     C extends Api['post'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -549,7 +549,7 @@ export class Axios {
     T extends Api['put'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['put'],
-    D extends Api['put'][U]['data'],
+    D extends Api['put'][U]['body'],
     P extends Api['put'][U]['params'],
     C extends Api['put'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -562,7 +562,7 @@ export class Axios {
     T extends Api['patch'][U]['response'],
     R extends AxiosResponse<T>,
     U extends keyof Api['patch'],
-    D extends Api['patch'][U]['data'],
+    D extends Api['patch'][U]['body'],
     P extends Api['patch'][U]['params'],
     C extends Api['patch'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -570,7 +570,7 @@ export class Axios {
   //   T extends Api['postform'][U]['response'],
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['postform'],
-  //   D extends Api['postform'][U]['data'],
+  //   D extends Api['postform'][U]['body'],
   //   P extends Api['postform'][U]['params'],
   //   C extends Api['postform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -578,7 +578,7 @@ export class Axios {
   //   T extends Api['putform'][U]['response'],
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['putform'],
-  //   D extends Api['putform'][U]['data'],
+  //   D extends Api['putform'][U]['body'],
   //   P extends Api['putform'][U]['params'],
   //   C extends Api['putform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
@@ -586,7 +586,7 @@ export class Axios {
   //   T extends Api['patchform'][U]['response'],
   //   R extends AxiosResponse<T>,
   //   U extends keyof Api['patchform'],
-  //   D extends Api['patchform'][U]['data'],
+  //   D extends Api['patchform'][U]['body'],
   //   P extends Api['patchform'][U]['params'],
   //   C extends Api['patchform'][U]['contentType']
   // >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>

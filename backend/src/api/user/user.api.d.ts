@@ -4,7 +4,7 @@ import { createUser } from './user.service'
 declare module '~/types/apis' {
   interface Post {
     '/api/user/register': {
-      data: CreateUserDto
+      body: CreateUserDto
       response: GetApiResponse<typeof createUser>
     }
   }
