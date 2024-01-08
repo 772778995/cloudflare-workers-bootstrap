@@ -479,6 +479,11 @@ export class Axios {
   request<T = any, R = AxiosResponse<T>, D = any>(
     config: AxiosRequestConfig<D>
   ): Promise<R>
+  /**
+   * - 用于从服务器获取资源。
+   * - 没有请求主体，所有的数据都附加在 URL 中。
+   * - 对服务器的操作是幂等的，多次相同的 GET 请求应该返回相同的结果。
+   */
   get<
     T extends ApiDetails['get'][U]['response'],
     R extends AxiosResponse<T>,
@@ -487,6 +492,11 @@ export class Axios {
     P extends ApiDetails['get'][U]['params'],
     C extends ApiDetails['get'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 用于请求服务器删除指定的资源。
+   * - 请求通常不包含主体，因为被删除的资源信息在 URL 中指定。
+   * - 对服务器的操作是幂等的。
+   */
   delete<
     T extends ApiDetails['delete'][U]['response'],
     R extends AxiosResponse<T>,
@@ -495,6 +505,10 @@ export class Axios {
     P extends ApiDetails['delete'][U]['params'],
     C extends ApiDetails['delete'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 类似于 GET 请求，但不返回实际的数据主体，只返回响应头信息。
+   * - 主要用于检查资源的元信息，如最后修改时间。
+   */
   head<
     T extends ApiDetails['head'][U]['response'],
     R extends AxiosResponse<T>,
@@ -503,6 +517,10 @@ export class Axios {
     P extends ApiDetails['head'][U]['params'],
     C extends ApiDetails['head'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 用于请求关于目标资源的信息，或者关于服务器的其他可用选项的信息。
+   * - 通常在 CORS（跨域资源共享）中使用。
+   */
   options<
     T extends ApiDetails['options'][U]['response'],
     R extends AxiosResponse<T>,
@@ -511,6 +529,11 @@ export class Axios {
     P extends ApiDetails['options'][U]['params'],
     C extends ApiDetails['options'][U]['contentType']
   >(url: U, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 用于向服务器提交数据，通常用于创建新资源。
+   * - 请求主体包含要提交的数据。
+   * - 对服务器的操作不是幂等的，即多次相同的 POST 请求可能会导致不同的结果
+   */
   post<
     T extends ApiDetails['post'][U]['response'],
     R extends AxiosResponse<T>,
@@ -519,6 +542,11 @@ export class Axios {
     P extends ApiDetails['post'][U]['params'],
     C extends ApiDetails['post'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 用于向服务器更新或创建资源。
+   * - 请求主体包含要更新的数据。
+   * - 对服务器的操作是幂等的，即多次相同的 PUT 请求应该具有相同的结果。
+   */
   put<
     T extends ApiDetails['put'][U]['response'],
     R extends AxiosResponse<T>,
@@ -527,6 +555,11 @@ export class Axios {
     P extends ApiDetails['put'][U]['params'],
     C extends ApiDetails['put'][U]['contentType']
   >(url: U, data?: D, config?: AxiosRequestConfig<D, U, M, P, C>): Promise<R>
+  /**
+   * - 用于对资源进行部分更新。
+   * - 请求主体包含要应用于资源的部分更新。
+   * - 对服务器的操作通常不是幂等的。
+   */
   patch<
     T extends ApiDetails['patch'][U]['response'],
     R extends AxiosResponse<T>,
@@ -607,3 +640,4 @@ export interface AxiosStatic extends AxiosInstance {
 declare const axios: AxiosStatic
 
 export default axios
+
