@@ -12,8 +12,6 @@
   },
   "include": [
     "src/**/*",
-    "../backend/src/types/apis.d.ts",
-    "../backend/src/api/**/*.d.ts",
-    "../backend/src/api/**/*.dto.ts"
+    "../backend/src/**/*"
   ]
 }
