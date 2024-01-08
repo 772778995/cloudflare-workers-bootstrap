@@ -36,6 +36,15 @@ export type Urls = {
   all: Urls[Exclude<keyof Urls, 'all'>]
 }
 
+type GetBaseRouterUrl<U extends string> = U extends `/${infer P1}/${infer P2}`
+  ? P2 extends `${string}/${string}`
+    ? `/${P1}${GetBaseRouterUrl<`/${P2}`>}` | GetBaseRouterUrl<`/${P1}`>
+    : GetBaseRouterUrl<`/${P1}`> | U
+  : U
+
+/** 基础路由路径 */
+export type BaseRouterUrl = GetBaseRouterUrl<Urls['all']> | ''
+
 export interface Api {
   /**
    * - 用于从服务器获取资源。
