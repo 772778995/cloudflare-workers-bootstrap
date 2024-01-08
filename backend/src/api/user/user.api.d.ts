@@ -8,5 +8,7 @@ declare module '~/types/apis' {
       body: CreateUserDto
       response: GetApiResponse<typeof createUser>
     }>
+
+    '/api/user/login-psd': {}
   }
 }
