@@ -1,6 +1,7 @@
 import { GetApiResponse, GetApiSchema } from '~/types/common'
 import { CreateUserDto } from './dto/create-user.dto'
 import { createUser } from './user.service'
+import { EmailCaptchaLoginDto } from './dto/email-captcha-login.dto'
 
 declare module '~/types/apis' {
   interface Post {
@@ -10,5 +11,9 @@ declare module '~/types/apis' {
     }>
 
     '/api/user/login-psd': {}
+
+    '/api/user/login-email-captcha': GetApiSchema<{
+      body: EmailCaptchaLoginDto
+    }>
   }
 }

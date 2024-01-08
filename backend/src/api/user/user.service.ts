@@ -4,6 +4,7 @@ import { and, eq } from 'drizzle-orm'
 import { CreateUserDto } from './dto/create-user.dto'
 import { PsdLoginDto } from './dto/psd-login.dto'
 import { isEmail } from 'class-validator'
+import { EmailCaptchaLoginDto } from './dto/email-captcha-login.dto'
 
 /** 通过邮箱地址获取用户信息 */
 export const getUserByEmail = async ({ $db }: IRequest, email: string) => {
@@ -41,4 +42,14 @@ export const loginByPsd = async ({ $v, $db, $res }: IRequest) => {
 
   if (!userInfo) $res.error('账号或密码错误')
   return $res.return(userInfo)
+}
+
+// TODO
+/** 邮箱验证码登录 */
+export const loginByEmailCaptcha = async (req: IRequest) => {
+  const { $v, $res } = req
+  const { email, captcha } = await $v.body(EmailCaptchaLoginDto)
+  console.log(email, captcha)
+
+  return $res.success('登录成功')
 }

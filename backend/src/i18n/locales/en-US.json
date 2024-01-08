@@ -3,6 +3,7 @@
   "已发送邮箱验证码，请注意查收": "Email verification code has been sent, please check it carefully",
   "已存在的邮箱": "Existing mailbox",
   "注册用户成功": "Registered user successfully",
+  "登录成功": "login successful",
   "请提供有效的音频文件地址": "Please provide a valid audio file address",
   "请输入6-32位字符的密码": "Please enter a password of 6-32 characters",
   "请输入6位数字的验证码": "Please enter the 6-digit verification code",

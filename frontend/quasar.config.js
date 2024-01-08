@@ -74,8 +74,8 @@ module.exports = configure(function (/* ctx */) {
         viteConf.base = './'
         viteConf.resolve.alias = Object.assign(viteConf.resolve.alias, {
           '@': path.resolve(__dirname),
-          '@backend': path.resolve(__dirname, '../backend'),
-          'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
+          '~': path.resolve(__dirname, '../backend/src'),
+          'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
         })
         merge(viteConf.esbuild, {
           jsxFactory: 'h',

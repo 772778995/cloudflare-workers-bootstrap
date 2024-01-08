@@ -1,18 +1,9 @@
 {
-  "Please enter a 6-digit verification code": "请输入6位数字的验证码",
-  "Please enter a password of at least 6 characters": "请输入至少6个字符的密码",
-  "Please enter at least 6 characters": "请输入至少6个字符",
-  "Please enter your account": "请输入您的账号",
-  "Please enter your email": "请输入您的邮箱地址",
-  "Please enter your phone": "请输入您的手机号码",
-  "SMS code": "验证码",
-  "Send Email Code": "发送邮箱验证码",
-  "Send SMS": "发送短信",
   "Your registration verification code: {{emailCode}}": "您的注册验证码：{emailCode}",
-  "email": "邮箱地址",
-  "login": "登录",
-  "phone": "手机号码",
-  "psd": "密码",
-  "register": "注册"
+  "发送邮箱验证码": "发送邮箱验证码",
+  "登录": "登录",
+  "请输入6位数字的验证码": "请输入6位数字的验证码",
+  "请输入您的邮箱地址": "请输入您的邮箱地址",
+  "邮箱地址": "邮箱地址",
+  "验证码": "验证码"
 }
-

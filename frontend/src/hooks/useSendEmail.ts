@@ -1,6 +1,7 @@
 import localForage from '../utils/localForage'
 import api from '../api'
 import useRequest from './useRequest'
+import { SendEmailCaptchaDto } from '~/api/captcha/dto/send-email-captcha.dto'
 
 export enum EmailCodeType {
   Register,
@@ -31,8 +32,8 @@ const useSendEmail = () => {
   watch(lastSendEmailCodeTime, countDown)
 
   const [sendEmailCode, isSendEmailCodeLoading] = useRequest(
-    async (email: string, type: EmailCodeType) => {
-      await api.post('/send-code/email', { email, type })
+    async (body: SendEmailCaptchaDto) => {
+      await api.post('/api/captcha/email', body)
       lastSendEmailCodeTime.value = Date.now()
       localForage.setItem('lastSendEmailCodeTime', lastSendEmailCodeTime.value)
       leftSeconds.value = 60
