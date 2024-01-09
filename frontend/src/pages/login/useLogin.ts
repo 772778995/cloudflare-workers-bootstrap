@@ -4,7 +4,6 @@ import useSendEmail from '@/src/hooks/useSendEmail'
 import localForage from '@/src/utils/localForage'
 import { QInput } from 'quasar'
 import { EmailCaptchaLoginDto } from '~/api/user/dto/email-captcha-login.dto'
-import { CaptchaTypeEnum } from '~/api/captcha/dto/captcha-type.dto'
 
 type Props = {
   emailInputRef: Ref<QInput>
@@ -22,7 +21,10 @@ export default (props: Props) => {
   const sendEmailCodeHandler = async () => {
     const isPass = await emailInputRef.value.validate()
     if (!isPass) return
-    sendEmailCode({ captchaType: CaptchaTypeEnum.Login, email: loginForm.value.email })
+    sendEmailCode({
+      captchaType: 'login',
+      email: loginForm.value.email
+    })
   }
 
   const [login, isLoginLoading] = useRequest(() =>
